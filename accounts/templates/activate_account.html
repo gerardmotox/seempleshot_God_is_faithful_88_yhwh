@@ -1,0 +1,6 @@
+{% autoescape off %}
+  <h1>Hi {{ user.username }},</h1>
+  <h3>Welcome to Django Survey</h3>
+Please click this link to confirm your email and complete registering.
+http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
+{% endautoescape %}

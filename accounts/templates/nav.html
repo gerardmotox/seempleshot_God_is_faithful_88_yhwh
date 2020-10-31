@@ -1,0 +1,55 @@
+<!-- header -->
+  <header class="site-header mo-left header fullwidth">
+  <!-- main header -->
+      <div class="sticky-header main-bar-wraper navbar-expand-lg">
+          <div class="main-bar clearfix">
+              <div class="containers clearfix" style="padding: 0 50px;">
+                  <!-- website logo -->
+                  <div class="logo-header mostion">
+                    <a href="{% url 'home' %}"><h2 style="margin: 0; padding: 0;">SeempleShot</h2></a>
+                  <!-- <a href="index.html"><img src="images/logo.png" class="logo" alt=""></a> -->
+                  </div>
+                  <!-- nav toggle button -->
+                  <!-- nav toggle button -->
+                  <button class="navbar-toggler collapsed navicon justify-content-end" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </button>
+                  <!-- extra nav -->
+                  <div class="extra-nav">
+                    {% if user.is_authenticated %}
+                      <div class="extra-cell">
+                          <a href="{% url 'login' %}"><i class="fa fa-upload"></i> Upload</a>
+                          &nbsp;&nbsp;&nbsp;
+                          <a href="{% url 'register' %}" title="Join as a pro" class="site-button"><i class="fa fa-doc"></i> New Booking </a>
+                      </div>
+                    {% else %}
+                      <div class="extra-cell">
+                          <a href="{% url 'login' %}"><i class="fa fa-upload"></i> Upload</a>
+                          <a href="{% url 'register' %}" title="Join as a pro" class="site-button"><i class="fa fa-lock"></i> Join as a pro </a>
+                      </div>
+                    {% endif %}
+                  </div>
+                  <!-- main nav -->
+                  {% if user.is_authenticated %}
+                  {% else %}
+                    <div class="header-nav navbar-collapse collapse justify-content-start" id="navbarNavDropdown">
+                      <ul class="nav navbar-nav">
+                        <li>
+                          <!-- {% url 'public:how' as how_url %} -->
+                          <a href="">How it works</a>
+                        </li>
+                        <li>
+                          <a href="{% url 'discover' %}">Discover</a>
+                        </li>
+                        <li><a href="{% url 'login' %}">Sign In</a></li>
+                      </ul>
+                    </div>
+                  {% endif %}
+              </div>
+          </div>
+      </div>
+      <!-- main header END -->
+</header>
+  <!-- header END -->

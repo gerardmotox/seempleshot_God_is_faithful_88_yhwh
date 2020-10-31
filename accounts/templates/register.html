@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block title %} SeempleShot - The one place to discover and hire great skills. {% endblock %}
+{% block content %}
+<!-- Content -->
+<div class="page-content">
+<style media="screen">
+  label {
+    margin: 0;
+    padding: 0;
+  }
+  input {
+    border-color: #e1e6eb;
+    border: 2px;
+    box-shadow: none;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 9px 15px;
+    box-size: border-box;
+    width: 100%;
+    background-color: #fff !important;
+    box-shadow: 0 0 10px 0 rgba(0,24,128,0.1) !important;
+    height: 50px;
+    border-radius: 5px!important;
+    margin-right: 25px;
+  }
+  input:focus {
+     border-color: #37a000;
+     outline: 0;
+  }
+  input:hover {
+     border-color:  #37a000;
+     outline: 0;
+  }
+</style>
+    <!-- contact area -->
+    <div class="section-full content-inner browse-job shop-account">
+        <!-- Product -->
+        <div class="container">
+            <div class="row">
+      <div class="col-md-12 m-b30">
+        <div class="p-a30 job-bx max-w500 radius-sm bg-white m-auto">
+          <div class="tab-content" style="display: block;">
+            <h4 class="font-weight-700 m-b5">Sign Up Now, It's Free!</h4>
+            <p class="font-weight-600">If you have an account with us, please <a href="login.html" style="color:#37a000;">log in.</a></p>
+            <form method="post" class="registration_form">
+              {% csrf_token %}
+                {% for field in form %}
+                <p>
+                  {{ field.label_tag }}<br>
+                  <div class="input_">{{ field }}</div>
+                  {% if field.help_text %}
+                    <small style="display: none">{{ field.help_text }}</small>
+                  {% endif %}
+                  {% for error in field.errors %}
+                    <p class="alert alert-danger" style="margin: 10px 0 0 0;">
+                      {{ error }}
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </p>
+                  {% endfor %}
+                </p>
+                {% endfor %}
+              <button type="submit"  class="site-button button-lg outline outline-2" style="width: 100%;">Create Account Now</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+        <!-- Product END -->
+</div>
+<!-- contact area  END -->
+</div>
+<script type="text/javascript">
+  $('.alert').alert()
+</script>
+<!-- Content END-->
+{% endblock %}

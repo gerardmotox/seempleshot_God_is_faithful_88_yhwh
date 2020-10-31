@@ -1,0 +1,312 @@
+{% extends 'base.html' %}
+{% block title %} SeempleShot - The one place to discover and hire great skills. {% endblock %}
+{% block content %}
+<!-- Section Banner -->
+<div class="dez-media">
+  <div class="dez-bnr-inr dez-bnr-inr-md">
+    <div class="container">
+      <div class="dez-bnr-inr-entry align-m"  style="background-color: #F9F8FD; background-image:url(/static/images/main-slider/photography-removebg-preview.png); background-size: 40%; background-position: right; background-repeat: no-repeat;">
+        <div class="find-job-bx col-xl-8 col-lg-8">
+          <h2 style="color: #333;">The one place to discover and hire pro with great skills.</h2>
+          <a href="post_job.html" title="READ MORE" class="site-button"><i class="fa fa-file-text-o"></i> Book Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Section Banner END -->
+<div class="section-full job-categories content-inner-2 bg-white">
+  <div class="container">
+    <div class="section-head d-flex head-counter clearfix">
+      <div class="mr-auto">
+        <h2 class="m-b5">Portrait, Events, Commercial, Food and Sport</h2>
+        <h6 class="fw3">20+ Catetories work wating for you</h6>
+      </div>
+    </div>
+    <div class="row sp20">
+      {% for category in categories %}
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="icon-bx-wraper">
+            <div class="icon-content">
+              <div class="icon-md text-primary m-b20"><img src="{{ category.icon.url }}" alt=""></div>
+              <a href="" class="dez-tilte">{{ category.category_name }}</a>
+              <!-- <div class="rotate-icon"><i class="ti-bar-chart"></i></div>  -->
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+      <div class="col-lg-12 text-center m-t30" style="clear: both; text-align: right!important;">
+        <a href="more-categories.html" title="View all categories" class="site-button">View All Categories <i class="fa fa-long-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section-full p-tb70 text-center bg-img-fix" style="background-color: #F9F8FD;">
+  <div class="container">
+    <div class="section-head text-left" style="clear: both; text-align: left;">
+      <h2 class="m-b5">This is what clients think about SimpleShot.</h2>
+      <h5 class="fw4">Few words from actual clients</h5>
+    </div>
+    <div class="blog-carousel-center owl-carousel owl-none">
+      <div class="item">
+        <div class="testimonial-5">
+          <div class="testimonial-text">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
+          </div>
+          <div class="testimonial-detail clearfix">
+            <div class="testimonial-pic radius shadow">
+              <img src="images/testimonials/pic1.jpg" width="100" height="100" alt="">
+            </div>
+            <strong class="testimonial-name">David Matin</strong>
+            <span class="testimonial-position">Student</span>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="testimonial-5">
+          <div class="testimonial-text">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
+          </div>
+          <div class="testimonial-detail clearfix">
+            <div class="testimonial-pic radius shadow">
+              <img src="images/testimonials/pic2.jpg" width="100" height="100" alt="">
+            </div>
+            <strong class="testimonial-name">David Matin</strong>
+            <span class="testimonial-position">Student</span>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="testimonial-5">
+          <div class="testimonial-text">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
+          </div>
+          <div class="testimonial-detail clearfix">
+            <div class="testimonial-pic radius shadow">
+              <img src="images/testimonials/pic3.jpg" width="100" height="100" alt="">
+            </div>
+            <strong class="testimonial-name">David Matin</strong>
+            <span class="testimonial-position">Student</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Our Latest Blog -->
+<div class="section-full content-inner-2 overlay-white-middle" style="background-image:url(images/lines.png); background-position:bottom; background-repeat:no-repeat; background-size: 100%;">
+  <div class="container">
+    <div class="section-head text-black text-left">
+      <h2 class="m-b0">Let our professionals inspire you for your next event </h2>
+    </div>
+    <!-- Pricing table-1 Columns 3 with gap -->
+    <!-- <div id="video-gallery">
+      <a href="https://www.youtube.com/embed/TcOaA2vfye8" >
+        <img src="http://i3.ytimg.com/vi/TcOaA2vfye8/maxresdefault.jpg" />
+      </a>
+      </div> -->
+    <div class="demo-gallery">
+      <ul id="masonry" class="list-unstyled row dez-gallery-listing gallery-grid-4 gallery mfp-gallery sp10">
+        {% for image in images %}
+          <li class="card-container col-lg-4 col-md-3 col-sm-6 col-6 cards_" data-responsive="{{ image.photo.url }} 375, {{ image.photo.url }} 480, {{ image.photo.url }} 800" data-src="{{ image.photo.url }}" data-sub-html="
+          <div style='text-align: left;'>
+                          <div class='testimonial-detail clearfix'>
+                              <strong class='testimonial-name' style='color: #fff; font-size: 14px;'><a href='pro_dashboard.html'>{{ image.username }}</a></strong>
+                              <div class='post-tags'>
+                                  <span class='fa fa-star'></span>
+                                  <span class='fa fa-star'></span>
+                                  <span class='fa fa-star'></span>
+                                  <span class='fa fa-star'></span>
+                                  <span class='fa fa-star'></span>
+                                  <span><strong>0.0</strong></span>
+                              </div>
+                              <span class='testimonial-position' style='font-size: 12px;'>Photographer - Malden, MA</span>
+                              <div class=''>
+                                  <a href='javascript:void(0);' data-toggle='modal' data-target='#bookprofessional' class='site-button add-btn button-sm' style='padding: 5px 10px; font-size: 14px;'>Book Pro Now</a>
+                              </div>
+                          </div>
+                      </div>
+          ">
+            <div class="dez-media dez-img-overlay1 dez-img-effect">
+              <a href="">
+                <img class="img-responsive" src="{{ image.photo.url }}">
+              </a>
+              <div style="text-align: left; position: absolute; bottom: 5px; left: 5px;" class="dss">
+                <div class="testimonial-detail clearfix">
+                  <strong class="testimonial-name">{{ image.username }}</strong>
+                  <div class="post-tags" style="color: #fff;">
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span><strong>0.0</strong></span>
+                  </div>
+                  <span class="testimonial-position" style="font-size: 12px; color: #fff;">Videographer</span>
+                  <div class="">
+                    <a href="javascript:void(0);" data-toggle="modal" data-target="#bookprofessional" class="site-button add-btn button-sm" style="padding: 5px 10px; font-size: 14px;">Invite Pro Now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="col-lg-12 text-center m-t30" style="clear: both; text-align: right!important;">
+      <a href="discover.html" class="site-button">Discover More  <i class="fa fa-long-arrow-right"></i></a>
+    </div>
+  </div>
+</div>
+<!-- Our Latest Blog -->
+<!-- Modal -->
+<div class="modal fade modal-bx-info editor" id="bookprofessional" tabindex="-1" role="dialog" aria-labelledby="ProfilesummaryModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ProfilesummaryModalLongTitle">Send an offer to Ledoux Ipanga</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="">
+          <h6 style="font-size: 17px; color: #222;">What do you need to shoot?</h6>
+          <div class="product-brand">
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="check1" name="example1">
+              <label class="custom-control-label" for="check1" style="color:#636e72; font-weight: normal;">Portrait - <span style="color:#37a000;">$200/hrs</span></label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="check2" name="example1">
+              <label class="custom-control-label" for="check2" style="color:#636e72; font-weight: normal;">Family - <span style="color:#37a000;">$50/hrs</span></label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="check4" name="example1">
+              <label class="custom-control-label" for="check4" style="color:#636e72; font-weight: normal;">Party - <span style="color:#37a000;">$180/hrs</span></label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="check3" name="example1">
+              <label class="custom-control-label" for="check3" style="color:#636e72; font-weight: normal;">Event - <span style="color:#37a000;">$450/hrs</span></label>
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <h6 style="font-size: 17px; color: #222;">Where is this going to be?</h6>
+          <div class="">
+            <div class="form-group">
+              <label>Location:</label>
+              <input id="autocomplete" placeholder="Enter your address" onFocus="geolocate()"
+              type="text" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Location details, e.g. floor number, where to meet:</label>
+              <textarea class="form-control" spellcheck="false" style="height: 80px;"></textarea>
+            </div>
+          </div>
+          <div class="row m-b30">
+            <div class="col-lg-5 col-md-5">
+              <div class="form-group">
+              <label for="dtp_input1" class="control-label">From DateTime:</label>
+              <div class="input-group date form_datetime" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                <input class="form-control" type="text" value="" readonly="">
+                <span class="input-group-addon svg-wrapper">
+                <span class="glyphicon glyphicon-remove">
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 300.003 300.003" style="enable-background:new 0 0 300.003 300.003;" xml:space="preserve">
+                  <g>
+                    <g>
+                    <path d="M150,0C67.159,0,0.001,67.159,0.001,150c0,82.838,67.157,150.003,149.997,150.003S300.002,232.838,300.002,150C300.002,67.159,232.839,0,150,0z M206.584,207.171c-5.989,5.984-15.691,5.984-21.675,0l-34.132-34.132l-35.686,35.686c-5.986,5.984-15.689,5.984-21.672,0c-5.989-5.991-5.989-15.691,0-21.68l35.683-35.683L95.878,118.14c-5.984-5.991-5.984-15.691,0-21.678c5.986-5.986,15.691-5.986,21.678,0l33.222,33.222l31.671-31.673c5.986-5.984,15.694-5.986,21.675,0c5.989,5.991,5.989,15.697,0,21.678l-31.668,31.671l34.13,34.132C212.57,191.475,212.573,201.183,206.584,207.171z"></path>
+                    </g>
+                  </g>
+                  </svg>
+                </span>
+                </span>
+                <span class="input-group-addon svg-wrapper"><span class="glyphicon glyphicon-calendar"><svg fill="#37a000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="19px" height="19px">
+                  <path d="M23,24V6H1v18H23z M3,8h18v14H3V8z"></path>
+                  <path d="M23,3h-3l0,2h-4l0-2H8l0,2H4l0-2H1C0.448,3,0,3.448,0,4v3c0,0.552,0.448,1,1,1h22c0.552,0,1-0.448,1-1V4 C24,3.448,23.552,3,23,3z"></path>
+                  <path fill-rule="evenodd" d="M5 0H7V4H5zM17 0H19V4H17zM5 10H7V12H5zM9 10H11V12H9zM13 10H15V12H13zM17 10H19V12H17zM5 14H7V16H5zM9 14H11V16H9zM13 14H15V16H13zM17 14H19V16H17zM5 18H7V20H5zM9 18H11V20H9zM13 18H15V20H13zM17 18H19V20H17z" clip-rule="evenodd"></path></svg></span></span>
+              </div>
+              <input type="hidden" id="dtp_input1" value=""><br>
+              </div>
+            </div>
+            <div class="col-lg-5 col-md-5">
+              <div class="form-group">
+              <label for="dtp_input2" class="control-labe2">To DateTime:</label>
+              <div class="input-group date to_datetime" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input2">
+                <input class="form-control" type="text" value="" readonly="">
+                <span class="input-group-addon svg-wrapper">
+                <span class="glyphicon glyphicon-remove">
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 300.003 300.003" style="enable-background:new 0 0 300.003 300.003;" xml:space="preserve">
+                  <g>
+                    <g>
+                    <path d="M150,0C67.159,0,0.001,67.159,0.001,150c0,82.838,67.157,150.003,149.997,150.003S300.002,232.838,300.002,150C300.002,67.159,232.839,0,150,0z M206.584,207.171c-5.989,5.984-15.691,5.984-21.675,0l-34.132-34.132l-35.686,35.686c-5.986,5.984-15.689,5.984-21.672,0c-5.989-5.991-5.989-15.691,0-21.68l35.683-35.683L95.878,118.14c-5.984-5.991-5.984-15.691,0-21.678c5.986-5.986,15.691-5.986,21.678,0l33.222,33.222l31.671-31.673c5.986-5.984,15.694-5.986,21.675,0c5.989,5.991,5.989,15.697,0,21.678l-31.668,31.671l34.13,34.132C212.57,191.475,212.573,201.183,206.584,207.171z"></path>
+                    </g>
+                  </g>
+                  </svg>
+                </span>
+                </span>
+                <span class="input-group-addon svg-wrapper"><span class="glyphicon glyphicon-calendar"><svg fill="#37a000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="19px" height="19px">
+                  <path d="M23,24V6H1v18H23z M3,8h18v14H3V8z"></path>
+                  <path d="M23,3h-3l0,2h-4l0-2H8l0,2H4l0-2H1C0.448,3,0,3.448,0,4v3c0,0.552,0.448,1,1,1h22c0.552,0,1-0.448,1-1V4 C24,3.448,23.552,3,23,3z"></path>
+                  <path fill-rule="evenodd" d="M5 0H7V4H5zM17 0H19V4H17zM5 10H7V12H5zM9 10H11V12H9zM13 10H15V12H13zM17 10H19V12H17zM5 14H7V16H5zM9 14H11V16H9zM13 14H15V16H13zM17 14H19V16H17zM5 18H7V20H5zM9 18H11V20H9zM13 18H15V20H13zM17 18H19V20H17z" clip-rule="evenodd"></path></svg></span></span>
+              </div>
+              <input type="hidden" id="dtp_input2" value=""><br>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <div class="">
+            <div class="form-group">
+              <label>What's Your Budget($):</label>
+              <input type="text" class="form-control" placeholder="$0.00">
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <div class="d-flex">
+            <h5>Where should we send your quote?</h5>
+          </div>
+          <div class="row m-b30">
+            <div class="col-lg-6 col-md-6">
+              <div class="form-group">
+                <label>First Name:</label>
+                <input type="text" class="form-control" placeholder="First Name">
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+              <div class="form-group">
+                <label>Last Name:</label>
+                <input type="text" class="form-control" placeholder="Last Name">
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+              <div class="form-group">
+                <label>Email Address:</label>
+                <input type="text" class="form-control" placeholder="Email">
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+              <div class="form-group">
+                <label>Password:</label>
+                <input type="text" class="form-control" placeholder="Password">
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+              <div class="form-group">
+                <label>Repeat Password:</label>
+                <input type="text" class="form-control" placeholder="Repeat Password">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="site-button" data-dismiss="modal">Cancel</button>
+        <button type="button" class="site-button">Book Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal End -->
+{% endblock %}
