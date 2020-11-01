@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 # from location_field.models.spatial import LocationField
 
 from django.db import models
+from multiselectfield import MultiSelectField
 
 class Tags(models.Model):
     name = models.CharField(max_length = 200, null=True)
@@ -87,7 +88,7 @@ class Pro_Available_Days(models.Model):
     )
     user_id = models.CharField(max_length = 200)
     username = models.CharField(max_length = 200)
-    days_to_work = models.CharField(max_length = 50, null = True, choices = DAYS)
+    days_to_work = MultiSelectField(choices = DAYS, max_choices = 7, max_length= 7)
 
 
     def __str__(self):
@@ -102,7 +103,7 @@ class Pro_Package_Offer(models.Model):
     user_id = models.CharField(max_length = 200)
     username = models.CharField(max_length = 200)
     # username = models.ForeignKey(ImageUpload, null=True, on_delete = models.SET_NULL)
-    package_name = models.CharField(max_length = 200, choices = PACKAGE)
+    package_name = MultiSelectField(choices = PACKAGE)
     package_price = models.FloatField(null = True)
     package_details = models.TextField()
 

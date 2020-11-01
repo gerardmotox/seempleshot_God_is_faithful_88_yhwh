@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %} SeempleShot - The one place to discover and hire great skills. {% endblock %}
+{% block content %}
+<!-- Content -->
+<div class="page-content">
+    <!-- contact area -->
+    <div class="section-full content-inner-2 shop-account">
+        <!-- Product -->
+        <div class="container">
+            <div class="container py-5">
+                <div class="row">
+                     <div class="col-md-2 text-center">
+                          <p><i class="fa fa-exclamation-triangle fa-5x"></i><br/>Status Code: 403</p>
+                     </div>
+                     <div class="col-md-10">
+                          <h3>Bozo! Sorry...</h3>
+                          <p>Sorry, your access is refused due to security reasons of our server and also our sensitive data.<br/>Please go back to the previous page to continue browsing.</p>
+                          <a class="btn btn-danger" href="{% url 'logout' %}">Go Back</a>
+                     </div>
+                </div>
+           </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

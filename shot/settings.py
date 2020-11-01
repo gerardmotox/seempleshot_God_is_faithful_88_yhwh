@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'location_field.apps.DefaultConfig',
+    'multiselectfield',
 ]
 
 MIDDLEWARE = [
